@@ -6,7 +6,13 @@
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Authors>Kyle Parrish</Authors>
-    <Company>NPPD</Company>
+    <Company>Natadon Technologies</Company>
+    <Description>This library compares the primative properties of two objects and tracks the differences between them.  This can then be used to create a simple change log of objects within an application.</Description>
+    <Copyright>2019</Copyright>
+    <PackageProjectUrl>https://github.com/kfparri/Object-Change-Tracker</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/kfparri/Object-Change-Tracker</RepositoryUrl>
+    <PackageTags>Changes, Helper</PackageTags>
+    <PackageLicenseUrl>https://licenses.nuget.org/MIT</PackageLicenseUrl>
   </PropertyGroup>
 
 </Project>
