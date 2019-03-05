@@ -11,6 +11,7 @@ namespace Object_Change_Tracker
         public ChangeDetector()
         {
             changes = new List<Change>();
+            change = new Change();
         }
 
         public List<Change> GetChanges(object OriginalObject, object ChangedObject, string UpdatedBy, DateTime Timestamp)
