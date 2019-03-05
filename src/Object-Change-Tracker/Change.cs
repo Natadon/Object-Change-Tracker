@@ -4,6 +4,11 @@ namespace Object_Change_Tracker
 {
     public class Change
     {
+        /// <summary>
+        /// ID that can be used for saving the data in Entity Framework
+        /// </summary>
+        public int ID { get; set; }
+
         public string ObjectName { get; set; }
 
         public int ObjectID { get; set; }
