@@ -8,6 +8,8 @@ namespace Object_Change_Tracker.Tests
     {
         private SimplePoco originalObject;
         private SimplePoco changedObject;
+        private SimplePocoNoID noIdOriginal;
+        private SimplePocoNoID noIdChanged;
         private static readonly DateTime date = new DateTime(2019, 3, 5, 11, 27, 48);
         private static ChangeDetector sut;
         
@@ -17,6 +19,17 @@ namespace Object_Change_Tracker.Tests
 
             originalObject = new SimplePoco() { ID = 30, name = "Name", boolean = true, date = DateTime.MinValue, number = 42 };
             changedObject = new SimplePoco() { ID = 30, name = "Kyle", boolean = true, date = DateTime.MinValue, number = 42 };
+        }
+
+        [Fact]
+        public void PocoWithNoID()
+        {
+            noIdOriginal = new SimplePocoNoID() { name = "Name", boolean = true, date = DateTime.MinValue, number = 42 };
+            noIdChanged = new SimplePocoNoID() { name = "Kyle", boolean = true, date = DateTime.MinValue, number = 42 };
+
+            List<Change> result = sut.GetChanges(noIdOriginal, noIdChanged, "Kyle", date);
+
+            Assert.Single(result);
         }
 
         [Fact]
@@ -99,6 +112,25 @@ namespace Object_Change_Tracker.Tests
         public SimplePoco()
         {
             ID = -1;
+            name = "";
+            number = -1;
+            boolean = true;
+            date = DateTime.MinValue;
+        }
+    }
+
+    class SimplePocoNoID
+    {
+        public string name { get; set; }
+
+        public int number { get; set; }
+
+        public bool boolean { get; set; }
+
+        public DateTime date { get; set; }
+
+        public SimplePocoNoID()
+        {
             name = "";
             number = -1;
             boolean = true;

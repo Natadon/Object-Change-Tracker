@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
-using Object_Change_Tracker;
 
 namespace Object_Change_Tracker.Tests
 {
@@ -13,6 +10,7 @@ namespace Object_Change_Tracker.Tests
         private const string oldVal = "Marco";
         private const string newVal = "Polo";
         private const string changedBy = "Kyle";
+        private const int objectID = 5;
         private static readonly DateTime date = new DateTime(2018, 1, 14);
 
         [Fact]
@@ -23,6 +21,28 @@ namespace Object_Change_Tracker.Tests
             sut.ObjectName = objName;
 
             Assert.Equal(objName, sut.ObjectName);
+        }
+
+        [Fact]
+        public void TestSetAndGetObjectID()
+        {
+            var sut = new Change
+            {
+                ObjectID = objectID
+            };
+
+            Assert.Equal(objectID, sut.ObjectID);
+        }
+
+        [Fact]
+        public void TestSetAndGetObjectIDNull()
+        {
+            var sut = new Change
+            {
+                ObjectID = null
+            };
+
+            Assert.Null(sut.ObjectID);
         }
 
         [Fact]
