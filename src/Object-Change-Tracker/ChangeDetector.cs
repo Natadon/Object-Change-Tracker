@@ -22,6 +22,18 @@ namespace Object_Change_Tracker
             // loop through the properties for this object and record the changes
             foreach(System.Reflection.PropertyInfo prop in ChangedObject.GetType().GetProperties())
             {
+                int? id;
+
+                // first, we need to see if the object has an ID field
+                if(ChangedObject.GetType().GetProperty("ID") == null)
+                {
+                    id = null;
+                }
+                else
+                {
+                    id = int.Parse(ChangedObject.GetType().GetProperty("ID").GetValue(ChangedObject, null).ToString());
+                }
+
                 //Only handle properties that are of "standard" types (i.e. string, integer, datetime, boolean, etc.) and are not read-only
                 //Custom properties (also known as complex properties) should be handled individually by calling WriteChange directly
                 //Also, don't write changes for those properties we don't care about (NoChangeLogProperties)
@@ -30,7 +42,7 @@ namespace Object_Change_Tracker
                     prop.CanWrite)
                 {
                     change = getChangeObject(objectName,
-                        int.Parse(ChangedObject.GetType().GetProperty("ID").GetValue(ChangedObject, null).ToString()),
+                        id,
                         prop.Name,
                         OriginalObject.GetType().GetProperty(prop.Name).GetValue(OriginalObject, null) == null ? "" : OriginalObject.GetType().GetProperty(prop.Name).GetValue(OriginalObject, null).ToString(),
                         ChangedObject.GetType().GetProperty(prop.Name).GetValue(ChangedObject, null) == null ? "" : ChangedObject.GetType().GetProperty(prop.Name).GetValue(ChangedObject, null).ToString(),
@@ -47,7 +59,7 @@ namespace Object_Change_Tracker
             return changes;
         }
 
-        Change getChangeObject(string objectName, int objectID, string property, string oldValue, string newValue, string changedBy, DateTime timestamp)
+        Change getChangeObject(string objectName, int? objectID, string property, string oldValue, string newValue, string changedBy, DateTime timestamp)
         {
             // handle null dates
             if(oldValue == "1/1/0001 12:00:00 AM")

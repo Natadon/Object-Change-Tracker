@@ -4,14 +4,9 @@ namespace Object_Change_Tracker
 {
     public class Change
     {
-        /// <summary>
-        /// ID that can be used for saving the data in Entity Framework
-        /// </summary>
-        public int ID { get; set; }
-
         public string ObjectName { get; set; }
 
-        public int ObjectID { get; set; }
+        public int? ObjectID { get; set; }
 
         public string PropertyChanged { get; set; }
 
@@ -34,7 +29,7 @@ namespace Object_Change_Tracker
             TimeStamp = DateTime.MinValue;
         }
 
-        public Change(string ObjectName, int ObjectID, string PropertyChanged, string OldValue, string NewValue, string ChangedBy, DateTime TimeStamp)
+        public Change(string ObjectName, int? ObjectID, string PropertyChanged, string OldValue, string NewValue, string ChangedBy, DateTime TimeStamp)
         {
             this.ObjectName = ObjectName;
             this.ObjectID = ObjectID;
