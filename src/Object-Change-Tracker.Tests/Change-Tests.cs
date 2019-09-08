@@ -8,6 +8,75 @@ namespace Object_Change_Tracker.Tests
 {
     public class Change_Tests
     {
+        private const string objName = "Test Object";
+        private const string propChange = "Name";
+        private const string oldVal = "Marco";
+        private const string newVal = "Polo";
+        private const string changedBy = "Kyle";
+        private static readonly DateTime date = new DateTime(2018, 1, 14);
+
+        [Fact]
+        public void TestSetAndGetObjectName()
+        {
+            var sut = new Change();
+
+            sut.ObjectName = objName;
+
+            Assert.Equal(objName, sut.ObjectName);
+        }
+
+        [Fact]
+        public void TestSetAndGetPropertyChanged()
+        {
+            var sut = new Change();
+
+            sut.PropertyChanged = propChange;
+
+            Assert.Equal(propChange, sut.PropertyChanged);
+        }
+
+        [Fact]
+        public void TestSetAndGetOldValue()
+        {
+            var sut = new Change();
+
+            sut.OldValue = oldVal;
+
+            Assert.Equal(oldVal, sut.OldValue);
+        }
+
+        [Fact]
+        public void TestSetAndGetNewValue()
+        {
+            var sut = new Change();
+
+            sut.NewValue = newVal;
+
+            Assert.Equal(newVal, sut.NewValue);
+        }
+
+        [Fact]
+        public void TestSetAndGetChangedBy()
+        {
+            var sut = new Change
+            {
+                ChangedBy = changedBy
+            };
+
+            Assert.Equal(changedBy, sut.ChangedBy);
+        }
+
+        [Fact]
+        public void TestSetAndGetTimeStamp()
+        {
+            var sut = new Change
+            {
+                TimeStamp = date
+            };
+
+            Assert.Equal(date, sut.TimeStamp);
+        }
+
         [Fact]
         public void ConstructorTest()
         {
