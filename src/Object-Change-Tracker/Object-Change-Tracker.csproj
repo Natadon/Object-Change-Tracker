@@ -13,9 +13,9 @@
     <RepositoryUrl>https://github.com/kfparri/Object-Change-Tracker</RepositoryUrl>
     <PackageTags>Changes, Helper</PackageTags>
     <PackageLicenseUrl></PackageLicenseUrl>
-    <AssemblyVersion>2.0.0.0</AssemblyVersion>
-    <FileVersion>2.0.0.0</FileVersion>
-    <Version>2.0.0</Version>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
+    <FileVersion>2.1.0.0</FileVersion>
+    <Version>2.1.0</Version>
     <PackageReleaseNotes></PackageReleaseNotes>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
   </PropertyGroup>
