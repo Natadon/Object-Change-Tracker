@@ -4,6 +4,8 @@ namespace Object_Change_Tracker
 {
     public class Change
     {
+        public int ID { get; set; }
+
         public string ObjectName { get; set; }
 
         public int? ObjectID { get; set; }
@@ -20,6 +22,7 @@ namespace Object_Change_Tracker
 
         public Change()
         {
+            ID = -1;
             ObjectName = "";
             ObjectID = -1;
             PropertyChanged = "";
@@ -31,6 +34,7 @@ namespace Object_Change_Tracker
 
         public Change(string ObjectName, int? ObjectID, string PropertyChanged, string OldValue, string NewValue, string ChangedBy, DateTime TimeStamp)
         {
+            ID = -1;
             this.ObjectName = ObjectName;
             this.ObjectID = ObjectID;
             this.PropertyChanged = PropertyChanged;

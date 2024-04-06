@@ -8,14 +8,14 @@
     <Authors>Kyle Parrish</Authors>
     <Company>Natadon Technologies</Company>
     <Description>This library compares the primative properties of two objects and tracks the differences between them.  This can then be used to create a simple change log of objects within an application.</Description>
-    <Copyright>2019</Copyright>
+    <Copyright>2024</Copyright>
     <PackageProjectUrl>https://github.com/kfparri/Object-Change-Tracker</PackageProjectUrl>
     <RepositoryUrl>https://github.com/kfparri/Object-Change-Tracker</RepositoryUrl>
     <PackageTags>Changes, Helper</PackageTags>
     <PackageLicenseUrl></PackageLicenseUrl>
-    <AssemblyVersion>2.1.0.0</AssemblyVersion>
-    <FileVersion>2.1.0.0</FileVersion>
-    <Version>2.1.0</Version>
+    <AssemblyVersion>2.1.1.0</AssemblyVersion>
+    <FileVersion>2.1.1.0</FileVersion>
+    <Version>2.1.1</Version>
     <PackageReleaseNotes></PackageReleaseNotes>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
   </PropertyGroup>
